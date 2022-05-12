@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    height: 800px;
+    width: 800px;
+    display: grid;
+}
+
+div{
+    border: 1px solid rgb(114, 113, 113);
+}
+
