@@ -1,10 +1,22 @@
 const container = document.querySelector(".container");
-//user input prompt box
-const userInput = prompt("Enter number of grid-cells", "(1-100)");
-if (userInput > 100) {
-  alert("Please input a number under 100");
-  document.location.reload();
-} else;
+//grid button function call
+const gridBtn = document.querySelector(".grid-btn");
+gridBtn.addEventListener("click", function () {
+  const userInput = prompt("Enter number of grid-cells", "(1-100)");
+  if (userInput > 100) {
+    alert("Please input a number under 100");
+    document.location.reload();
+  } else;
+  resetGrid();
+  gridSize(userInput);
+});
+
+//reset grid function
+function resetGrid() {
+  while (container.firstChild) {
+    container.removeChild(container.firstChild);
+  }
+}
 
 //function grid size change
 function gridSize(value) {
@@ -25,6 +37,13 @@ function gridSize(value) {
     function hoverOff() {
       newDiv.style.backgroundColor = "black";
     }
+    //clear button function
+    const clearBtn = document.querySelector(".clear-btn");
+    clearBtn.addEventListener("click", () => {
+      clearGrid();
+    });
+    function clearGrid() {
+      newDiv.style.backgroundColor = null;
+    }
   }
 }
-gridSize(userInput);
